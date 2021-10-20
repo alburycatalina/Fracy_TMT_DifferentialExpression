@@ -29,12 +29,22 @@ DE_data <- prot_data %>% select(
 , B12_4_1_A, B12_4_2_B, B12_4_3_B, noB12_4_1_A, noB12_4_2_B, B12_12_1_B, B12_12_3_A, noB12_12_2_B, noB12_12_3_A)
 
 ```   
-Then, we want to produce a data table with your treatment names as column names and only protein counts 
+Then, we want to produce a data table with your treatment names as column names and only protein counts. 
 
 ```
 # Remove protein descriptions to include only counts
 prot_counts <- DE_data[,2:length(DE_data)]
 ``` 
+The `prot_counts` dataframe shoud look something like this:
+
+|   | B12\_4\_1\_A | B12\_4\_2\_B | B12\_4\_3\_B | noB12\_4\_1\_A | noB12\_4\_2\_B | B12\_12\_1\_B | B12\_12\_3\_A | noB12\_12\_2\_B | noB12\_12\_3\_A |
+| - | ------------ | ------------ | ------------ | -------------- | -------------- | ------------- | ------------- | --------------- | --------------- |
+| 1 | 24.63467     | 19.46553     | 22.77993     | 26.88796       | 21.20123       | 24.59296      | 35.97626      | 24.88003        | 29.54765        |
+| 2 | 17.81133     | 24.12346     | 20.23982     | 18.5398        | 22.49559       | 25.02764      | 18.8711       | 23.51011        | 19.60626        |
+| 3 | 30.41739     | 32.60178     | 30.17645     | 23.9213        | 30.4887        | 38.13539      | 33.67675      | 41.46934        | 39.43933        |
+| 4 | 16.40984     | 14.15455     | 17.5295      | 16.03307       | 14.19846       | 14.29592      | 15.62037      | 13.72128        | 12.74443        |
+| 5 | 10.08804     | 16.04148     | 14.4479      | 11.26448       | 12.77096       | 11.0875       | 10.48096      | 17.08629        | 12.42589        |
+
 
 Next, we will list the treatment group type of each of your treatment replicates. Ex: my first three samples are control temperature, B12 replete treatments.
 
@@ -42,8 +52,6 @@ Next, we will list the treatment group type of each of your treatment replicates
 # Make vector with treatment groups
 DE_data_groups <- factor(c('B12_4',	'B12_4','B12_4', 'noB12_4',	'noB12_4','B12_12', 'B12_12', 'noB12_12', 'noB12_12'))
 ``` 
-
-
   
 ## 2. The Main Event
 All of this goes into a DGE_list object as below. The `counts` argument accepts the table with just protein abundances, the `group` argument takes the group type assignments we just made, and the `genes` argument is for a list of your protein names or id's (I used the gene product ID's found in the "accession" column; all that matters is that these are unqiue). It is a good idea to check for duplicates in what you're feeding to the `gene` argument here just to be safe. 
