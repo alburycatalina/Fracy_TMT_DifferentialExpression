@@ -3,9 +3,6 @@ library(edgeR) # if installing edgeR, needs to be done through bioconductor. Ins
 library(statmod)
 library(tidyverse)
 
-# Set working directory
-#setwd("D:/OneDrive - Dalhousie University/MSc/CHI/FC_Global_Proteome/Methods/FC_GP_DE/DE/DE_20102021")
-setwd("~/Desktop/OneDrive - Dalhousie University/MSc/0_CHI/FC_Global_Proteome/Methods/FC_GP_DE/DE/DE_20102021")
 
 # Load in file with protein quants and description
 prot_data <- read.csv('PD1_Norm_11072021.csv')
