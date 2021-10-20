@@ -24,7 +24,7 @@ library(tidyverse)
 # read protein file as .csv
 prot_data <- read.csv('PD1_Norm_11072021.csv')
 
-# Select only the columns needed (note I exclude some treatments here due to some reasons outlined in the paper)
+# Select only the columns needed (note I exclude some treatments here)
 DE_data <- prot_data %>% select(
 , B12_4_1_A, B12_4_2_B, B12_4_3_B, noB12_4_1_A, noB12_4_2_B, B12_12_1_B, B12_12_3_A, noB12_12_2_B, noB12_12_3_A)
 
