@@ -3,9 +3,9 @@
 This repo contains code for conducting a differential expression analysis of proteins from _F. cylindrus_ cultures grown under high temperature treatments and vitamin B<sub>12</sub> starvation. Thanks to the brilliant Scott McCain for the skeleton that this tutorial is based on, which can be found [here](https://github.com/jspmccain). 
 
 The goal of this statistical analysis is to determine which proteins are differentially expressed in the treatment cultures when compared to control. 
-There are 3 files in the repository - [a script with the analysis](https://github.com/alburycatalina/TMT_DifferentialExpression/blob/master/DE_20102021.R), [the data](https://github.com/alburycatalina/TMT_DifferentialExpression/blob/master/PD1_Norm_11072021.csv), and this short walkthrough guide. At this point, I assumed your data has been normalized and all missing values have been removed or imputed. Check out [this repo](https://github.com/pwilmart/IRS_normalization) for a tutorial on the IRS normalization procedure I used in the data. You can reference the [full edgeR user guide](http://bioconductor.org/packages/release/bioc/vignettes/edgeR/inst/doc/edgeRUsersGuide.pdf) for an under-the-hood look at the workings of these functions. egdeR offers a few different types of analysis, but we will use their quasi-likelihood F-tests in this example. 
+There are 3 files in the repository - [a script with the analysis](https://github.com/alburycatalina/TMT_DifferentialExpression/blob/master/DE_20102021.R), [the data](https://github.com/alburycatalina/TMT_DifferentialExpression/blob/master/PD1_Norm_11072021.csv), and this short walkthrough guide. At this point, I assume your data has been normalized and all missing values have been removed or imputed. Check out [this repo](https://github.com/pwilmart/IRS_normalization) for a tutorial on the IRS normalization procedure I used in the data. You can reference the [full edgeR user guide](http://bioconductor.org/packages/release/bioc/vignettes/edgeR/inst/doc/edgeRUsersGuide.pdf) for an under-the-hood look at the workings of these functions. egdeR offers a few different types of analysis, but we will use their quasi-likelihood F-tests in this example. 
 
-There are three main steps for completeting the analysis. 
+
 
 
 ## 1. "Massaging" the Data
