@@ -154,7 +154,9 @@ hits_12_noB12 <- hits_12_noB12 %>% arrange(PValue)
 
 ## 3. Making Sense of It All 
 
-If done correctly, this is what the final data should look like. In the comparisons we've made, proteins with a positive `logFC` corresponds to an enriched protein compared to the control. 
+If done correctly, this is what one of the final data frames should look like. In the comparisons we've made, proteins with a positive `logFC` corresponds to an enriched protein compared to the control.
+
+
 | accession  | Description                                                                                                 | logFC      | logCPM     | F          | PValue     | FDR        |
 | ---------- | ----------------------------------------------------------------------------------------------------------- | ---------- | ---------- | ---------- | ---------- | ---------- |
 | OEU11144.1 | 5-methyltetrahydropteroyltriglutamate--homocysteine methyltransferase \[Fragilariopsis cylindrus CCMP1102\] | 5.27942766 | 11.133677  | 84.0634102 | 3.85E-06   | 0.00522224 |
