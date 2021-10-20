@@ -1,4 +1,4 @@
-# Differential Expression Analysis for TMT Protein Data with EdgeR
+# Differential Expression Analysis for TMT Protein Data with edgeR
 
 This repo contains code for conducting a differential expression analysis of proteins from _F. cylindrus_ cultures grown under high temperature treatments and vitamin B<sub>12</sub> starvation. Thanks to the brilliant Scott McCain for the skeleton that this tutorial is based on, which can be found [here](https://github.com/jspmccain). 
 
