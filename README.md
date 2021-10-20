@@ -1,4 +1,4 @@
-# Differential Expression Analysis for TMT Protein Data with edgeR
+# Differential Expression Analysis for TMT Protein Data with `edgeR`
 
 This repo contains code for conducting a differential expression analysis of proteins from _F. cylindrus_ cultures grown under high temperature treatments and vitamin B<sub>12</sub> starvation. Thanks to the brilliant Scott McCain for the skeleton that this tutorial is based on, which can be found [here](https://github.com/jspmccain). 
 
@@ -10,7 +10,7 @@ There are 3 files in the repository - [a script with the analysis](https://githu
 
 ## 1. "Massaging" the Data
 
-We need to get the data into an appropriate format before using EdgeR's function to identify lists of differentially expressed proteins for each comparison we make. This is all working towards putting your protein abundances, treatments, and protein names into something called a   `DGE_list` object that we can conduct the DE analysis on. 
+We need to get the data into an appropriate format before using edgeR's functions to identify lists of differentially expressed proteins for each comparison we make. This is all working towards putting your protein abundances, treatments, and protein names into something called a   `DGE_list` object that we can conduct the DE analysis on. 
 
 First, call the required packages to your environment. If you're installing  edgeR for the first time, can be done through Bioconductor. [Instructions here!](https://bioconductor.org/packages/release/bioc/html/edgeR.html) 
 
