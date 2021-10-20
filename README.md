@@ -70,7 +70,7 @@ Along with the design matrix, we need to estimate tag dispersal of the data. Thi
 # Get tagwise dispersion of tags
 DGE_disp <- estimateDisp(DGE_list, design.mat, robust = TRUE)
 ```
- Lastly, we fit these to a genera linear model. 
+ Lastly, we fit these to a general linear model. 
  
 ```
  # Fit to GLM
@@ -78,7 +78,7 @@ fit <- glmQLFit(DGE_disp, design.mat, robust = TRUE)
 
 ```
 
-Here we lay out the comparisons needed to tell us which proteins are differentially expressed per treatment. Which treatments you choose to compare depends on your question. Here I make three comparisons: one which tells me about the effect: (1) of B12 starvation, (2) elevated temperature, and (3) the combination of the two stressors. Then, fit tests are conducted on each comparison. The `topTags` step takes the results of the fit tests and produces a list of the top differntially expressed protein per pairwise comparison (`n = 500`). These are produced in the topTags class and so the values need to be extracted. 
+Here we lay out the comparisons needed to tell us which proteins are differentially expressed per treatment. Which treatments you choose to compare depends on your question. Here I make three comparisons: one which tells me about the effect: (1) of B<sub>12</sub> starvation, (2) elevated temperature, and (3) the combination of the two stressors. Then, fit tests are conducted on each comparison. The `topTags` step takes the results of the fit tests and produces a list of the top differntially expressed protein per pairwise comparison (`n = 500`). These are produced in the topTags class and so the values need to be extracted. 
 
 
 ```
@@ -152,6 +152,13 @@ hits_12_noB12 <- hits_12_noB12 %>% arrange(PValue)
 
 
 
-
-
 ## 3. Making Sense of It All 
+
+If done correctly, this is what the final data should look like. In the comparisons we've made, proteins with a positive `logFC` corresponds to an enriched protein compared to the control. 
+| accession  | Description                                                                                                 | logFC      | logCPM     | F          | PValue     | FDR        |
+| ---------- | ----------------------------------------------------------------------------------------------------------- | ---------- | ---------- | ---------- | ---------- | ---------- |
+| OEU11144.1 | 5-methyltetrahydropteroyltriglutamate--homocysteine methyltransferase \[Fragilariopsis cylindrus CCMP1102\] | 5.27942766 | 11.133677  | 84.0634102 | 3.85E-06   | 0.00522224 |
+| OEU10229.1 | protoporphyrin IX Mg-chelatase subunit D \[Fragilariopsis cylindrus CCMP1102\]                              | 1.98202135 | 8.55656912 | 17.9758636 | 0.00167818 | 0.83348938 |
+| OEU11214.1 | hypothetical protein FRACYDRAFT\_246327 \[Fragilariopsis cylindrus CCMP1102\]                               | 2.4411276  | 9.36918024 | 17.6200734 | 0.00184264 | 0.83348938 |
+| OEU18387.1 | P-ATPase family transporter: zinc/lead/cadmium/mercury ion \[Fragilariopsis cylindrus CCMP1102\]            | 1.21189564 | 9.7739918  | 15.05875   | 0.00299821 | 0.99994004 |
+| OEU08987.1 | T-complex protein 1 subunit gamma \[Fragilariopsis cylindrus CCMP1102\]                                     | 1.01189583 | 10.2914415 | 11.8166049 | 0.00626436 | 0.99994004 |
